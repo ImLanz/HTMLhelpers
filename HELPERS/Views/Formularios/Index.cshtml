@@ -1,0 +1,108 @@
+﻿@model IEnumerable<HTMLhelpers.Models.Formulario>
+@using HTMLhelpers.Models
+
+@{
+    ViewBag.Title = "Inicio";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Create")
+</p>
+<head>
+    <style>
+        .cuerpo {
+            background-image: url();
+            background-size: cover;
+        }
+
+        .formulario {
+            border-radius: 25px;
+            margin-left: 20px;
+            margin-right: 20px;
+            position: center;
+            background-color: #FFF4EC;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="cuerpo">
+    <div class="formulario">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.cedula)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.apellido)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.edad)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.telefono)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Correo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.genero)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.estado)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.hobbies)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cedula)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.apellido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.edad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.telefono)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Correo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.genero)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.estado)
+                </td>
+                @for (int item = 0; item <= Model.hobbies.Length; item++)
+                {
+                    if (Model.hobbies[item] != "false")
+                    {
+                        <td>@Model.hobbies[item]</td>
+
+                    }
+                }
+                <td>
+                    @Html.ActionLink("EDITAR", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("BORRAR", "Delete", new { id = item.ID })
+                </td>
+            </tr>
+            }
+
+        </table>
+    </div>
+</body>
