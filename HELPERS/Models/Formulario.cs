@@ -37,7 +37,13 @@ namespace HTMLhelpers.Models
 
         public String estado { get; set; }
 
-        public string[] hobbies { get; set; }
+        //public string[] hobbies { get; set; }
+
+        public bool hobby1 { get; set; }
+        public bool hobby2 { get; set; }
+        public bool hobby3 { get; set; }
+        public bool hobby4 { get; set; }
+
 
         public generos GenerosPersonas { get; set; }
 

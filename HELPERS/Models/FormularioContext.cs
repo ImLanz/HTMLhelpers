@@ -9,7 +9,7 @@ namespace HTMLhelpers.Models
     public class FormularioContext:DbContext
     {   
         public FormularioContext()
-            : base("FormularioData")
+            : base("FormularioDatBase")
         { 
         }
 

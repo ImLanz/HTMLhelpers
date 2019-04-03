@@ -1,6 +1,4 @@
 ﻿@model IEnumerable<HTMLhelpers.Models.Formulario>
-@using HTMLhelpers.Models
-
 @{
     ViewBag.Title = "Inicio";
 }
@@ -56,7 +54,7 @@
                     @Html.DisplayNameFor(model => model.estado)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.hobbies)
+                    <p>hobbies</p>
                 </th>
                 <th></th>
             </tr>
@@ -87,15 +85,11 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.estado)
+                </td>  
+                <td>
+                    @Html.DisplayFor(modelItem => item.hobby1)
+                    @*@if(Model.hobby1 is )*@
                 </td>
-                @for (int item = 0; item <= Model.hobbies.Length; item++)
-                {
-                    if (Model.hobbies[item] != "false")
-                    {
-                        <td>@Model.hobbies[item]</td>
-
-                    }
-                }
                 <td>
                     @Html.ActionLink("EDITAR", "Edit", new { id = item.ID }) |
                     @Html.ActionLink("BORRAR", "Delete", new { id = item.ID })
@@ -104,5 +98,15 @@
             }
 
         </table>
+    </div>
+
+    <div>
+        @*@for (int item1 = 0; item1 < Model.hobbies.Length; item1++)
+        {
+            if (Model.hobbies[item1] != "false")
+            {
+                Model.hobbies[item1])
+            }
+         }*@
     </div>
 </body>

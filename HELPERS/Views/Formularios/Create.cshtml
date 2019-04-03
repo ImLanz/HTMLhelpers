@@ -88,12 +88,13 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.hobbies,"Hobbies:", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.hobby1,"Hobbies:", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="checkbox-hobbies">
-               | @Html.CheckBox("hobbies[]", false, new { @value = "Programar" }) Programar  |
+                @*@Html.CheckBoxFor(model => model.hobby1, checked)*@
+               @*| @Html.CheckBox("hobbies[]", false, new { @value = "Programar" }) Programar  |
                 @Html.CheckBox("hobbies[]", false, new { @value = "Escuchar Musica" }) Escuchar Musica  |
                 @Html.CheckBox("hobbies[]", false, new { @value = "Videojuegos" }) Videojuegos  |
-                @Html.CheckBox("hobbies[]", false, new { @value = "Escribir" }) Escribir  |
+                @Html.CheckBox("hobbies[]", false, new { @value = "Escribir" }) Escribir  |*@
             </div>
         </div>
 
@@ -105,6 +106,6 @@
     </div>
 }
 
-<div>
-    @Html.ActionLink("VOLVER ATRAS", "Index")
-</div>
+    <div class="nav nav-pills">
+        @Html.ActionLink("VOLVER ATRAS", "Index")
+    </div>
